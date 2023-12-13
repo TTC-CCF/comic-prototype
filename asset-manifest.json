@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/comic-prototype/static/css/main.f855e6bc.css",
+    "main.js": "/comic-prototype/static/js/main.b3aac025.js",
+    "index.html": "/comic-prototype/index.html",
+    "main.f855e6bc.css.map": "/comic-prototype/static/css/main.f855e6bc.css.map",
+    "main.b3aac025.js.map": "/comic-prototype/static/js/main.b3aac025.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.b3aac025.js"
+  ]
+}
