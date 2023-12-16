@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.notice-bar {
+  animation-name: notice;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.chating-header {
+  width: 100vw;
+}
+
+/* Animations */
+@keyframes notice {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
