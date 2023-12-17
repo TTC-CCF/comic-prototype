@@ -132,7 +132,7 @@ function TextInput({ setMessages, size }) {
                             const textObj = { text: picked[i], isMine: false };
                             setMessages((messages) => [...messages, textObj]);
                         }, 1000 * (i + 1));
-                    }                    
+                    }
                 }}
             />
         </div>
@@ -149,6 +149,20 @@ function Chating({ chat, setPage }) {
     useEffect(() => {
         setSize({ width: window.innerWidth, height: window.innerHeight });
         window.addEventListener("resize", handleResize);
+
+        const picked = fakeMessages[Math.floor(Math.random() * fakeMessages.length)];
+
+        for (let i = 0; i < picked.length; i++) {
+            setTimeout(() => {
+                const textObj = { text: picked[i], isMine: false };
+                setMessages((messages) => [...messages, textObj]);
+            }, 1000 * (i + 1));
+        }
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+
     }, []);
 
     useEffect(() => {
@@ -206,10 +220,10 @@ function Chating({ chat, setPage }) {
 const fakeMessages = [
     ["你好!", "我也是這部漫畫的愛好者😅"],
     ["我很喜歡Beanfun這個平台🥹", "他們提供的漫畫都很好看😍😍"],
-    ["是喔", "我也是欸😵‍💫😵‍💫😵‍💫😵‍💫!", "我最喜歡的漫畫是《魔法禁書目錄》"],
+    ["是喔", "我也是欸😵‍💫😵‍💫😵‍💫😵‍💫!", "我最喜歡的漫畫是《叛逆玩家》"],
     ["你知道他們最近在辦一個活動嗎?", "我覺得很有趣😂😂😂😂"],
     ["就是那個心理測驗!", "我覺得很酷欸", "你有做過嗎?😗"],
-    ["我抽到的角色是「魔法禁書目錄」的「上條當麻」🤣🤣", "你呢?"],
+    ["我抽到的角色是「叛逆玩家」的「林慕」🤣🤣", "你呢?"],
 ]
 
 export default Chating;

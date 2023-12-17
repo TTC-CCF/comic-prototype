@@ -1,10 +1,55 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 .bg {
   height: 100dvh;
   width: auto;
+}
+
+.bg-special {
+  width: 100dvw;
+  max-width: 600px;
+  height: auto;
+}
+
+.intro-panel {
+  background-color: rgba(255, 255, 255, 0.8); 
+  width: 55%;
+  max-width: calc(600px * 0.55);
+  height: 40dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 25vh;
+  left: 20vw;
+  border-radius: 20px;
+  animation-name: intro-out;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.intro-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3B3A3B;
+}
+
+.intro-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3B3A3B;
+}
+
+.animated-text {
+  animation-name: intro-text-out;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 input::placeholder {
@@ -13,4 +58,24 @@ input::placeholder {
 
 .img-button-container :hover {
   cursor: pointer;
+}
+
+@keyframes intro-out {
+  0% {
+    background-color: rgba(255, 255, 255, 0); 
+
+  }
+  100% {
+    background-color: rgba(255, 255, 255,0.8); 
+
+  }
+}
+
+@keyframes intro-text-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

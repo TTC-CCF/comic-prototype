@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function TextInput({ coordinate, size }) {
     return (
@@ -30,6 +31,7 @@ function TextInput({ coordinate, size }) {
 function ChatTopic({ setPage }) {
     const imageRef = useRef();
     const [imageSize, setImageSize] = useState({ width: 0, height: 0, offset: { x: 0, y: 0 }});
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.addEventListener("resize", handleWindowResize);
@@ -48,6 +50,10 @@ function ChatTopic({ setPage }) {
 
         if (y >= imageHeight * 0.514 && y <= imageHeight * 0.578 && x >= imageWidth * 0.322 && x <= imageWidth * 0.672) {
             setPage("chooseChat");
+        }
+
+        if (y >= imageHeight * 0.855) {
+            navigate("special");
         }
     }
 
